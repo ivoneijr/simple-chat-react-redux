@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import * as actions from '../../reducers/chat';
-import Message from './Message/index.jsx';
+import Message from '../Message/index.jsx';
 import { gamoraMessages, hulkShapeMessage } from '../../utils/messages';
 import CHAT_SHAPE from './shape';
 
