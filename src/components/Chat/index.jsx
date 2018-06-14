@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import * as actions from '../../reducers/chat';
-import gamoraMessages from '../../utils/gamoraMessages';
+import { gamoraMessages, hulkShapeMessage } from '../../utils/messages';
 import CHAT_SHAPE from './shape';
 
 import './chat.less';
@@ -19,11 +19,7 @@ class Chat extends Component {
   }
 
   addMessage() {
-    const message = {
-      user: 'Hulk',
-      email: 'hulk@marvel.com',
-      text: this.props.chat.text,
-    };
+    const message = { ...hulkShapeMessage, text: this.props.chat.text };
 
     this.props.dispatch(actions.addMessage(message));
   }
