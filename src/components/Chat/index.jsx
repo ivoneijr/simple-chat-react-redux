@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import * as actions from '../../reducers/chat';
+import Message from './Message.jsx';
 import { gamoraMessages, hulkShapeMessage } from '../../utils/messages';
 import CHAT_SHAPE from './shape';
 
@@ -33,8 +34,12 @@ class Chat extends Component {
           <div className='icon-counter'/>
           <span> {chat.messages.length} </span>
         </div>
+
         <div className='messages'>
-          { JSON.stringify(chat) }
+          {
+            chat.messages.length > 0 ?
+              chat.messages && chat.messages.map((message, i) => <Message message={message} key={i}/>) : ''
+          }
         </div>
 
         <div className='form'>
