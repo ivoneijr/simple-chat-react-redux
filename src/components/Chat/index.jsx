@@ -33,6 +33,8 @@ class Chat extends Component {
     return (
       <div className='chat' id='chat'>
         <div className='top-counter'>
+          <div className='icon-counter'/>
+          <span> {chat.messages.length} </span>
         </div>
         <div className='messages'>
           { JSON.stringify(chat) }
