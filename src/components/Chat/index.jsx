@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import * as actions from '../../reducers/chat';
 import gamoraMessages from '../../utils/gamoraMessages';
+import CHAT_SHAPE from './shape';
 
 import './chat.less';
 
@@ -51,7 +52,7 @@ class Chat extends Component {
 
 Chat.propTypes = {
   dispatch: PropTypes.func,
-  chat: PropTypes.object,
+  chat: PropTypes.shape(CHAT_SHAPE),
 };
 
 export default connect(state => state.chat.toJS())(Chat);
